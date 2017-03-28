@@ -204,7 +204,7 @@ document.getElementById("btn-3").addEventListener("click", function () {
 ```javaScript
 var intTree = SDT.returnTree(true);
 ```
-### SDT.inputTree() 
+### SDT.drowInputTree() 
 重绘树，接受一个参数，参数类型为完整树 ，调用后会清空目标画布，并立即重绘
 ```javaScript
 SDT.inputTree(intTree);
