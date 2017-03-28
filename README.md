@@ -45,13 +45,13 @@ SDT 是 SVG Drag Tree 的缩写，是一个可以通过拖放 SVG 图标，来�
 
 #### 元素配置:
 在每个可拖动SVG图标外层的 &lt;div&gt;（class="sdt-drag-element"） 标签中通过 data-sdt-eleset-* 进行元素配置 
-* data-sdt-eleset-dropswitch 
+* **data-sdt-eleset-dropswitch** 
 值为 true 或 false 
 当值为 true 时元素可直接放置于画布
-* data-sdt-eleset-leanright 
+* **data-sdt-eleset-leanright** 
 值为 true 或 false 
 当值为 true 时元素默认放置于右侧树
-* data-sdt-eleset-foresidetype 
+* **data-sdt-eleset-foresidetype** 
 值为一个字符串 type 间由 "," 隔开 
 当值为空时，则任何元素都将不接受其的放置；当值为 all 时所有元素都接受其放置；当值为合法 type 串时，type 串中所代表的类型元素将接受其放置
 ```html
@@ -66,19 +66,19 @@ data-sdt-eleset-foresidetype="icon-1,icon-2">
 
 #### 目标画布配置:
 在 class="svg-canvas" 的 &lt;div&gt; 标签中通过 data-sdt-eleset-* 进行目标画布配置 
-* data-sdt-eleset-lineType 
+* **data-sdt-eleset-lineType** 
 值为 "straight" 或 "bessel" 
 当值为 "straight" 时元素间连线方式为直线；当值为 "bessel" 时元素间连线方式为贝塞尔曲线；
-* data-sdt-eleset-lineColor 
+* **data-sdt-eleset-lineColor** 
 值为颜色色值字符串 
 连线颜色为此色值
-* data-sdt-eleset-treecenterX 
+* **data-sdt-eleset-treecenterX** 
 值为数字（不带单位，非字符串） 
 树的中心 X 坐标
-* data-sdt-eleset-treecenterY 
+* **data-sdt-eleset-treecenterY** 
 值为数字（不带单位，非字符串） 
 树的中心 Y 坐标
-* data-sdt-eleset-margin 
+* **data-sdt-eleset-margin** 
 值为数字（不带单位，非字符串） 
 元素的上下边距 
 ```html
@@ -104,16 +104,16 @@ var set_o = {
 
 #### 元素配置: 
 在 SDTTreeElements 数组中，每一项为一个对象，每个对象的: 
-* type 属性 
+* **type** 属性 
 值为字符串 
 表示元素类型
-* dropswitch 属性 
+* **dropswitch** 属性 
 值为 true 或 false 
 当值为 true 时元素可直接放置于画布
-* leanRight 
+* **leanRight** 
 值为 true 或 false 
 当值为 true 时元素默认放置于右侧树
-* foresideType 
+* **foresideType** 
 值为一个数组 
 当数组为空时，则任何元素都将不接受其的放置；当数组有元素值为 all 时所有元素都接受其放置；当数组元素值为合法 type 时，其 type 所对应元素接受其放置
 ```javaScript
@@ -142,19 +142,19 @@ var set_o = {
 #### 目标画布配置:
 
 在 SDTTreeSet 对象中，每一个属性: 
-* lineType 
+* **lineType** 
 值为 "straight" 或 "bessel" 
 当值为 "straight" 时元素间连线方式为直线；当值为 "bessel" 时元素间连线方式为贝塞尔曲线；
-* lineColor 
+* **lineColor** 
 值为颜色色值字符串 
 连线颜色为此色值
-* treecenterX 
+* **treecenterX** 
 值为数字（不带单位，非字符串） 
 树的中心 X 坐标
-* treecenterY 
+* **treecenterY** 
 值为数字（不带单位，非字符串） 
 树的中心 Y 坐标
-* treeEleMargin 
+* **treeEleMargin** 
 值为数字（不带单位，非字符串） 
 元素的上下边距
 ```javaScript
