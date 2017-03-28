@@ -7,34 +7,33 @@ SDT 是 SVG Drag Tree 的缩写，是一个可以通过拖放 SVG 图标，来�
 *注: 若通需过其他的 JS 脚本（如下面的 exampleScript.js）对组件进行设置或调用，则此 JS 文件需在 SDT.js 后引入* 
 ```html
 <head>
-...
-<script src="SDT.js" defer="defer" type="text/javascript" charset="utf-8"></script>
-<script src="exampleScript.js" defer="defer" type="text/javascript" charset="utf-8"></script>
-...
+	...
+	<script src="SDT.js" defer="defer" type="text/javascript" charset="utf-8"></script>
+	<script src="exampleScript.js" defer="defer" type="text/javascript" charset="utf-8"></script>
+	...
 </head>
 ```
 在 .html 文件中，可拖动的所有 SVG 图标被一个 class = "sdt-drag-element-lis" 的 &lt;div &gt; 标签包围，每个SVG图标分别被一个 class="sdt-drag-element" 的 &lt;div &gt; 标签包围  
 *注：class="sdt-drag-element" 的 &lt;div&gt; 标签必须拥有 data-sdt-type 属性，属性值为字符串，用以说明此图标的类型*
 ```html
 <div class="sdt-drag-element-lis">
-<div class="sdt-drag-element" data-sdt-type="icon-1">
-<svg>...</svg>
-</div>
-<div class="sdt-drag-element" data-sdt-type="icon-2">
-<svg>...</svg>
-</div>
-<div class="sdt-drag-element" data-sdt-type="icon-3">
-<svg>...</svg>
-</div>
-...
+	<div class="sdt-drag-element" data-sdt-type="icon-1">
+		<svg>...</svg>
+	</div>
+	<div class="sdt-drag-element" data-sdt-type="icon-2">
+		<svg>...</svg>
+	</div>
+	<div class="sdt-drag-element" data-sdt-type="icon-3">
+		<svg>...</svg>
+	</div>
+	...
 </div>
 ```
 
 在 .html 文件中，目标画布被一个 class="sdt-canvas" 的 &lt;div&gt; 标签包围，此标签的宽和高决定了目标画布的宽和高。目标画布本身是一个 id="sdt-drop-canvas" 的 &lt;svg&gt;标签
 ```html
 <div class="sdt-canvas">
-<svg id="sdt-drop-canvas" width="100%" height="100%">
-</svg>
+	<svg id="sdt-drop-canvas" width="100%" height="100%">...</svg>
 </div>
 ```
 
@@ -61,7 +60,7 @@ data-sdt-type="icon-1"
 data-sdt-eleset-dropswitch=true
 data-sdt-eleset-leanright=true
 data-sdt-eleset-foresidetype="icon-1,icon-2">
-<svg>...</svg>
+	<svg>...</svg>
 </div>
 ```
 
@@ -89,8 +88,7 @@ data-sdt-eleset-lineColor="#900"
 data-sdt-eleset-treecenterX="360"
 data-sdt-eleset-treecenterY="360"
 data-sdt-eleset-margin="8">
-<svg id="dropCanvas" width="100%" height="100%">
-</svg>
+	<svg id="dropCanvas" width="100%" height="100%">...</svg>
 </div>
 ```
 ### 配置方法 2: 在新的 JS 文件中进行配置
@@ -99,9 +97,9 @@ data-sdt-eleset-margin="8">
 *注意： SDTTreeElements 是数组对象，而 SDTTreeSet 是对象*
 ```javaScript
 var set_o = {
-"SDTTreeElements": [],
-"SDTTreeSet": {}
-};
+	"SDTTreeElements": [],
+	"SDTTreeSet": {}
+	};
 ```
 
 #### 元素配置: 
@@ -121,22 +119,22 @@ var set_o = {
 ```javaScript
 var set_o = {
 "SDTTreeElements": [
-{
-"type": "icon-1", 
-"dropSwitch": true, 
-"foresideType": ["icon-1","icon-2"], 
-"leanRight": false
-},{
-"type": "icon-2",
-"dropSwitch": true,
-"foresideType": ["root", "icon-2"], 
-"leanRight": false
-},{
-"type": "icon-2",
-"dropSwitch": true,
-"foresideType": ["all"], 
-"leanRight": false
-}
+	{
+		"type": "icon-1", 
+		"dropSwitch": true, 
+		"foresideType": ["icon-1","icon-2"], 
+		"leanRight": false
+	},{
+		"type": "icon-2",
+		"dropSwitch": true,
+		"foresideType": ["root", "icon-2"], 
+		"leanRight": false
+	},{
+		"type": "icon-2",
+		"dropSwitch": true,
+		"foresideType": ["all"], 
+		"leanRight": false
+	}
 ],
 "SDTTreeSet": {...}
 };
@@ -161,14 +159,14 @@ var set_o = {
 元素的上下边距
 ```javaScript
 var set_o = {
-"SDTTreeElements": [...],
-"SDTTreeSet": {
-"lineType": "bessel",
-"lineColor": "#f00",
-"treeCenterX": "360",
-"treeCenterY": "360",
-"treeEleMargin": "16"
-}
+	"SDTTreeElements": [...],
+	"SDTTreeSet": {
+		"lineType": "bessel",
+		"lineColor": "#f00",
+		"treeCenterX": "360",
+		"treeCenterY": "360",
+		"treeEleMargin": "16"
+		}
 };
 ```
 
@@ -182,7 +180,7 @@ SDT.SVGDragComponent(set_o)
 返回画布中心，不接受参数
 ```javaScript
 document.getElementById("btn-1").addEventListener("click", function () {
-SDT.backCenter();
+	SDT.backCenter();
 });
 ```
 
@@ -191,12 +189,12 @@ SDT.backCenter();
 注: 若不传入参数则删除最近放置的元素
 ```javaScript
 document.getElementById("btn-2").addEventListener("click", function () {
-var rLis =["icon-2-3","icon-3-1","icon-1-1"]
-SDT.removeELe(rLis);
+	var rLis =["icon-2-3","icon-3-1","icon-1-1"]
+	SDT.removeELe(rLis);
 });
 
 document.getElementById("btn-3").addEventListener("click", function () {
-SDT.removeELe();
+	SDT.removeELe();
 });
 ```
 
@@ -216,8 +214,8 @@ SDT.inputTree(intTree);
 若放置不合法，其值会改变为最近拖放对象的 foresideType 信息，即可以放置在那些类型的元素后信息，可以通过 Object.defineProperty 监测值改变
 ```javaScript
 Object.defineProperty(SDT.dropErrorMsg, 'dataDropError', {
-set: function (msg) {
-alert(msg);
-}
+	set: function (msg) {
+		alert(msg);
+	}
 });
 ```
