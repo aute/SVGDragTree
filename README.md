@@ -1,9 +1,9 @@
-# SDT 是什么？
+## SDT 是什么？
 SDT 是 SVG Drag Tree 的缩写，是一个可以通过拖放 SVG 图标，来生成拥有树状结构的视图与数据的一个前端组件。该组件不依赖任何其他的库或框架，其 .min.js 格式文件大小约为 13kb
 
-# 引入方法
+## 引入方法
 
-通过 &lt;script&gt; 标签引入，若此标签放置于头部，则需为其添加并设置 defer="defer" 属性 
+通过 &lt;script&gt; 标签引入，若此标签放置于头部，则需为其添加并设置 defer="defer" 属性  
 *注: 若通需过其他的 JS 脚本（如下面的 exampleScript.js）对组件进行设置或调用，则此 JS 文件需在 SDT.js 后引入* 
 ```html
 <head>
@@ -38,13 +38,13 @@ SDT 是 SVG Drag Tree 的缩写，是一个可以通过拖放 SVG 图标，来�
 </div>
 ```
 
-# 配置方法
-## 不进行配置： 
+## 配置方法
+### 不进行配置： 
 若不进行配置，则组件默认所有元素均可放置于所有元素之上，默认所有元素放置于右边树，元素间的上下边距为元素的高度，元素间的连线方式为贝塞尔曲线，连线颜色为#999，树的中心位于画布中心
 
-## 配置方法 1: 直接在 .html 文件中进行配置
+### 配置方法 1: 直接在 .html 文件中进行配置
 
-### 元素配置:
+#### 元素配置:
 在每个可拖动SVG图标外层的 &lt;div&gt;（class="sdt-drag-element"） 标签中通过 data-sdt-eleset-* 进行元素配置 
 * data-sdt-eleset-dropswitch 
 值为 true 或 false 
@@ -65,7 +65,7 @@ data-sdt-eleset-foresidetype="icon-1,icon-2">
 </div>
 ```
 
-### 目标画布配置:
+#### 目标画布配置:
 在 class="svg-canvas" 的 &lt;div&gt; 标签中通过 data-sdt-eleset-* 进行目标画布配置 
 * data-sdt-eleset-lineType 
 值为 "straight" 或 "bessel" 
@@ -93,7 +93,7 @@ data-sdt-eleset-margin="8">
 </svg>
 </div>
 ```
-## 配置方法 2: 在新的 JS 文件中进行配置
+### 配置方法 2: 在新的 JS 文件中进行配置
 
 声明一个对象 set_o 对象字面量为 
 *注意： SDTTreeElements 是数组对象，而 SDTTreeSet 是对象*
@@ -104,7 +104,7 @@ var set_o = {
 };
 ```
 
-### 元素配置: 
+#### 元素配置: 
 在 SDTTreeElements 数组中，每一项为一个对象，每个对象的: 
 * type 属性 
 值为字符串 
@@ -141,7 +141,7 @@ var set_o = {
 "SDTTreeSet": {...}
 };
 ```
-### 目标画布配置:
+#### 目标画布配置:
 
 在 SDTTreeSet 对象中，每一个属性: 
 * lineType 
@@ -172,13 +172,13 @@ var set_o = {
 };
 ```
 
-# API
-## SDT.SVGDragComponent() 
+## API
+### SDT.SVGDragComponent() 
 对组件进行配置，接受一个参数，参数类型为对象，对象字面量应符合 “配置方法 2: 在新的 JS 文件中进行配置” 中所规定的格式
 ```javaScript
 SDT.SVGDragComponent(set_o)
 ```
-## SDT.backCenter() 
+### SDT.backCenter() 
 返回画布中心，不接受参数
 ```javaScript
 document.getElementById("btn-1").addEventListener("click", function () {
@@ -186,7 +186,7 @@ SDT.backCenter();
 });
 ```
 
-## SDT.removeELe() 
+### SDT.removeELe() 
 删除元素，接受一个参数，参数类型为数组，数组元素应为要删除的元素的 id 
 注: 若不传入参数则删除最近放置的元素
 ```javaScript
@@ -200,19 +200,19 @@ SDT.removeELe();
 });
 ```
 
-## SDT.returnTree() 
+### SDT.returnTree() 
 返回树，接受一个参数，参数类型为值为 true 或 false 的变量，若值为 true 则返回精简树（元素只包含 id 、 name 、 foresideObjId 、 childEles 信息），不可用于重绘；若值为 false 则返回完整树，完整树可用于重绘
 注: 重绘要求有页面有图标信息，即相应的 class = "sdt-drag-element-lis" 的 &lt;div&gt; 标签所包涵的图标列表
 ```javaScript
 var intTree = SDT.returnTree(true);
 ```
-## SDT.inputTree() 
+### SDT.inputTree() 
 重绘树，接受一个参数，参数类型为完整树 ，调用后会清空目标画布，并立即重绘
 ```javaScript
 SDT.inputTree(intTree);
 ```
 
-## SDT.dropErrorMsg
+### SDT.dropErrorMsg
 若放置不合法，其值会改变为最近拖放对象的 foresideType 信息，即可以放置在那些类型的元素后信息，可以通过 Object.defineProperty 监测值改变
 ```javaScript
 Object.defineProperty(SDT.dropErrorMsg, 'dataDropError', {
