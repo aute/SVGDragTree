@@ -1,0 +1,28 @@
+#sdtDropCanvas {
+    background: url("bc.png") top center;
+}
+
+.sdt-drag-element-lis,
+.sdt-canvas {
+    float: left;
+}
+
+.sdt-drag-element {
+    weight: 144px;
+    height: 36px;
+    padding: 6px;
+    margin: 8px 12px;
+}
+
+button {
+    display: block;
+    height: 36px;
+    width: 144px;
+    margin: 14px 18px;
+    border-radius: 4px;
+    border: none;
+    background-color: #84A7B7;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
