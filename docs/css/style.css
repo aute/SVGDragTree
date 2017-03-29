@@ -52,7 +52,7 @@ main {
 }
 
 .buttons {
-    margin-top: 192px;
+    padding-top: 168px;
 }
 
 .ps {
@@ -62,10 +62,10 @@ main {
 }
 
 .title {
-    width: 144px;
+    width: 156px;
     height: 96px;
     padding: 6px;
-    margin: -12px 12px 0px 12px;
+    margin: -12px 0px 0px 12px;
     font-size: 72px;
 }
 
