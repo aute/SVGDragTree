@@ -225,6 +225,7 @@ Object.defineProperty(SDT.dropErrorMsg, 'dataDropError', {
 ```
 
 ## 小目标
+* **提高兼容性** 
 * **完善文档** 
 * **为元素加入可自定义的信息属性与修改方法** 
 * **为元素添加、删除加入动画效果** 
