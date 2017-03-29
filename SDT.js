@@ -207,12 +207,6 @@ var SDT = (function() {
                 pushObject(SDTTree, provisionalSDTTreeEle);
                 eleSeqList.push(provisionalSDTTreeEle.id);
                 canvasRepain();
-                // 初次放置后的画布行为初始化
-                if (firstDrop) {
-                    canvasBlow();
-                    dragable();
-                    firstDrop = false;
-                }
             } else {
                 dropError.dataDropError = provisionalSDTTreeEle.foresideType;
             }
@@ -248,8 +242,14 @@ var SDT = (function() {
         } else {
             linkObjBessel(SDTTree, SDTTreeCollocated.SDTTreeSet);
         }
-
-        setDropObject(); //对画布上的所有元素绑定事件
+        //对画布上的所有元素绑定事件
+        setDropObject();
+        // 初次放置后的画布行为初始化
+        if (firstDrop) {
+            canvasBlow();
+            dragable();
+            firstDrop = false;
+        }
     }
 
     function pushObject(rootObj, obj) {
@@ -558,7 +558,10 @@ var SDT = (function() {
                 }
                 return simplifySDTTree;
             }
-            return SDTTree;
+            return {
+                SDTTree,
+                eleSeqList
+            };
         },
         backCenter: function() {
             var dragSVG = document.getElementById("sdtDropCanvas");
@@ -597,7 +600,8 @@ var SDT = (function() {
             canvasRepain();
         },
         drawInputTree: function(tree) {
-            SDTTree = tree;
+            SDTTree = tree.SDTTree;
+            eleSeqList = tree.eleSeqList;
             canvasRepain();
         },
         dropErrorMsg: dropError,

@@ -139,6 +139,8 @@ var SDT = (function() {
         // 元素的 width 和 height设置
         SDTTreeCollocated.SDTTreeSet.SDTTreeEleWidth = document.querySelector(".sdt-drag-element svg").width.baseVal.value;
         SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight = document.querySelector(".sdt-drag-element svg").height.baseVal.value;
+        SDTTreeCollocated.SDTTreeSet.SDTViewBoxWidth = document.querySelector(".sdt-canvas").clientWidth;
+        SDTTreeCollocated.SDTTreeSet.SDTViewBoxHeight = document.querySelector(".sdt-canvas").clientHeight;
         // 画布配置
         var sCanvas = document.querySelector(".sdt-canvas");
         if (sCanvas.dataset.sdtElesetLinetype) {
@@ -207,12 +209,6 @@ var SDT = (function() {
                 pushObject(SDTTree, provisionalSDTTreeEle);
                 eleSeqList.push(provisionalSDTTreeEle.id);
                 canvasRepain();
-                // 初次放置后的画布行为初始化
-                if (firstDrop) {
-                    canvasBlow();
-                    dragable();
-                    firstDrop = false;
-                }
             } else {
                 dropError.dataDropError = provisionalSDTTreeEle.foresideType;
             }
@@ -248,8 +244,14 @@ var SDT = (function() {
         } else {
             linkObjBessel(SDTTree, SDTTreeCollocated.SDTTreeSet);
         }
-
-        setDropObject(); //对画布上的所有元素绑定事件
+        //对画布上的所有元素绑定事件
+        setDropObject();
+        // 初次放置后的画布行为初始化
+        if (firstDrop) {
+            canvasBlow();
+            dragable();
+            firstDrop = false;
+        }
     }
 
     function pushObject(rootObj, obj) {
@@ -453,8 +455,6 @@ var SDT = (function() {
 
 
     function canvasBlow() {
-        SDTTreeCollocated.SDTTreeSet.SDTViewBoxWidth = document.querySelector("#sdtDropCanvas").width.animVal.value;
-        SDTTreeCollocated.SDTTreeSet.SDTViewBoxHeight = document.querySelector("#sdtDropCanvas").height.animVal.value;
         var SDTViewBoxHeight = SDTTreeCollocated.SDTTreeSet.SDTViewBoxHeight;
         var sdtDropCanvasScale = 1;
         document.querySelector("#sdtDropCanvas").addEventListener("mousewheel", function(event) {
@@ -558,7 +558,11 @@ var SDT = (function() {
                 }
                 return simplifySDTTree;
             }
-            return SDTTree;
+            return {
+                SDTTree,
+                eleSeqList,
+                typeEleCountList
+            };
         },
         backCenter: function() {
             var dragSVG = document.getElementById("sdtDropCanvas");
@@ -597,7 +601,9 @@ var SDT = (function() {
             canvasRepain();
         },
         drawInputTree: function(tree) {
-            SDTTree = tree;
+            SDTTree = tree.SDTTree;
+            eleSeqList = tree.eleSeqList;
+            typeEleCountList = tree.typeEleCountList;
             canvasRepain();
         },
         dropErrorMsg: dropError,
