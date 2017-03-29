@@ -228,4 +228,4 @@ Object.defineProperty(SDT.dropErrorMsg, 'dataDropError', {
 * **提高兼容性** 
 * **完善文档** 
 * **为元素加入可自定义的信息属性与修改方法** 
-* **为元素添加、删除加入动画效果** 
+* **为元素的 添加／删除 加入动画效果** 
