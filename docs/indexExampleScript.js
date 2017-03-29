@@ -52,6 +52,6 @@ document.getElementById("backout").addEventListener("click", function() {
 });
 Object.defineProperty(SDT.dropErrorMsg, 'dataDropError', {
     set: function(msg) {
-        alert("Please drop it on: " + msg);
+        alert("Error! please drop it on: " + msg);
     }
 });

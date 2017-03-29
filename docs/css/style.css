@@ -40,3 +40,35 @@ button:hover {
 button:active {
     background-color: #547D87;
 }
+
+.right {
+    color: #666;
+    width: 200px;
+}
+
+main {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.buttons {
+    margin-top: 192px;
+}
+
+.ps {
+    font-size: 12px;
+    width: 160px;
+    margin: 360px 0px 14px 40px;
+}
+
+.title {
+    width: 144px;
+    height: 96px;
+    padding: 6px;
+    margin: -12px 12px 0px 12px;
+    font-size: 72px;
+}
+
+.left {
+    margin-right: 12px;
+}
