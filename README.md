@@ -1,9 +1,9 @@
 <img src="e.gif">
 
-### 示例 [example](https://aute.github.io/SVGDragTree/) 
-
 ## SDT 是什么？
 SDT 是 SVG Drag Tree 的缩写，是一个可以通过拖放 SVG 图标，来生成拥有树状结构的视图与数据的一个前端组件。该组件不依赖任何其他的库或框架，同时在样式上给予了用户极大的自由（因此，示例并不代表其最终样式），其 .min.js 格式文件大小约为 13kb
+
+### 示例 [example](https://aute.github.io/SVGDragTree/) 
 
 ## 引入方法
 
