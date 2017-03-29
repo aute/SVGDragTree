@@ -139,6 +139,8 @@ var SDT = (function() {
         // 元素的 width 和 height设置
         SDTTreeCollocated.SDTTreeSet.SDTTreeEleWidth = document.querySelector(".sdt-drag-element svg").width.baseVal.value;
         SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight = document.querySelector(".sdt-drag-element svg").height.baseVal.value;
+        SDTTreeCollocated.SDTTreeSet.SDTViewBoxWidth = document.querySelector(".sdt-canvas").clientWidth;
+        SDTTreeCollocated.SDTTreeSet.SDTViewBoxHeight = document.querySelector(".sdt-canvas").clientHeight;
         // 画布配置
         var sCanvas = document.querySelector(".sdt-canvas");
         if (sCanvas.dataset.sdtElesetLinetype) {
@@ -453,8 +455,6 @@ var SDT = (function() {
 
 
     function canvasBlow() {
-        SDTTreeCollocated.SDTTreeSet.SDTViewBoxWidth = document.querySelector("#sdtDropCanvas").width.animVal.value;
-        SDTTreeCollocated.SDTTreeSet.SDTViewBoxHeight = document.querySelector("#sdtDropCanvas").height.animVal.value;
         var SDTViewBoxHeight = SDTTreeCollocated.SDTTreeSet.SDTViewBoxHeight;
         var sdtDropCanvasScale = 1;
         document.querySelector("#sdtDropCanvas").addEventListener("mousewheel", function(event) {
@@ -560,7 +560,8 @@ var SDT = (function() {
             }
             return {
                 SDTTree,
-                eleSeqList
+                eleSeqList,
+                typeEleCountList
             };
         },
         backCenter: function() {
@@ -602,6 +603,7 @@ var SDT = (function() {
         drawInputTree: function(tree) {
             SDTTree = tree.SDTTree;
             eleSeqList = tree.eleSeqList;
+            typeEleCountList = tree.typeEleCountList;
             canvasRepain();
         },
         dropErrorMsg: dropError,
