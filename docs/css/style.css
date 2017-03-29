@@ -7,8 +7,9 @@
     background: url("bc.png") top center;
 }
 
-.sdt-drag-element-lis,
-.sdt-canvas {
+.left,
+.cent,
+.right {
     float: left;
 }
 
