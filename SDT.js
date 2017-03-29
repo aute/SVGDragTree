@@ -558,11 +558,8 @@ var SDT = (function() {
                 }
                 return simplifySDTTree;
             }
-            return {
-                SDTTree,
-                eleSeqList,
-                typeEleCountList
-            };
+            var intTree = [SDTTree, eleSeqList, typeEleCountList];
+            return intTree;
         },
         backCenter: function() {
             var dragSVG = document.getElementById("sdtDropCanvas");
@@ -601,9 +598,9 @@ var SDT = (function() {
             canvasRepain();
         },
         drawInputTree: function(tree) {
-            SDTTree = tree.SDTTree;
-            eleSeqList = tree.eleSeqList;
-            typeEleCountList = tree.typeEleCountList;
+            SDTTree = tree[0];
+            eleSeqList = tree[1];
+            typeEleCountList = tree[2];
             canvasRepain();
         },
         dropErrorMsg: dropError,
