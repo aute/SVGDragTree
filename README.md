@@ -97,7 +97,8 @@ data-sdt-eleset-margin="8">
 ```
 ### 配置方法 2: 在新的 JS 文件中进行配置
 
-声明一个对象 set_o 对象字面量为 
+声明一个对象 set_o 对象字面量为  
+
 *注意： SDTTreeElements 是数组对象，而 SDTTreeSet 是对象*
 ```javaScript
 var set_o = {
