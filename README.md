@@ -179,7 +179,7 @@ var set_o = {
 ### SDT.SVGDragComponent() 
 对组件进行配置，接受一个参数，参数类型为对象，对象字面量应符合 “配置方法 2: 在新的 JS 文件中进行配置” 中所规定的格式
 ```javaScript
-SDT.SVGDragComponent(set_o)
+SDT.SVGDragComponent(set_o);
 ```
 ### SDT.backCenter() 
 返回画布中心，不接受参数
