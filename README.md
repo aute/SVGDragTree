@@ -233,6 +233,6 @@ Object.defineProperty(SDT.dropErrorMsg, 'dataDropError', {
 * 为元素加入可自定义的信息属性与修改方法 
 * 为元素的 添加／删除 加入动画效果 
 
-## 已知 bug  & 兼容性问题
+## 已知 bug & 兼容性问题
 * IE 似乎全线挂吊了，Edge也挂了
 * Safari 拖动图标没效果，只能拖动文字部分 
