@@ -69,6 +69,14 @@ main {
     font-size: 72px;
 }
 
+.title2 {
+    width: 156px;
+    height: 36px;
+    padding: 6px;
+    margin: -12px 0px 0px 12px;
+    font-size: 28px;
+}
+
 .left {
     margin-right: 12px;
 }
