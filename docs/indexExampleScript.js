@@ -47,6 +47,17 @@ document.getElementById("center").addEventListener("click", function() {
     SDT.backCenter();
 });
 
+document.getElementById("changeline").addEventListener("click", function() {
+    if (set_o.SDTTreeSet.lineType !== "bessel") {
+        set_o.SDTTreeSet.lineType = "bessel";
+    } else {
+        set_o.SDTTreeSet.lineType = "straight";
+    }
+    SDT.SVGDragComponent(set_o);
+    SDT.drawInputTree(SDT.returnTree());
+});
+
+
 document.getElementById("backout").addEventListener("click", function() {
     SDT.removeELe();
 });
