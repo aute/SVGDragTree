@@ -1,0 +1,74 @@
+* {
+    transition: 0.2s ease;
+    outline: none;
+}
+
+#sdtDropCanvas {
+    background: url("bc.png") top center;
+}
+
+.left,
+.cent,
+.right {
+    float: left;
+}
+
+.sdt-drag-element {
+    width: 144px;
+    height: 36px;
+    padding: 6px;
+    margin: 8px 12px;
+}
+
+button {
+    display: block;
+    height: 36px;
+    width: 144px;
+    margin: 14px 18px;
+    border-radius: 4px;
+    border: none;
+    background-color: #6B95A0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #84A7B7;
+}
+
+button:active {
+    background-color: #547D87;
+}
+
+.right {
+    color: #999;
+    width: 200px;
+}
+
+main {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.buttons {
+    padding-top: 128px;
+}
+
+.ps {
+    font-size: 12px;
+    width: 160px;
+    margin: 180px 0px 14px 40px;
+}
+
+.title {
+    width: 156px;
+    height: 96px;
+    padding: 6px;
+    margin: -12px 0px 0px 12px;
+    font-size: 72px;
+}
+
+.left {
+    margin-right: 12px;
+}

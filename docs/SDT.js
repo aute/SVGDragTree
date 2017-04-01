@@ -11,7 +11,7 @@ var SDT = (function() {
             "SDTTreeLineType": "bessel", //元素连线方式 bessel,straight
             "SDTTreeEleHeight": 0, // 元素的 height
             "SDTTreeEleWidth": 0, // 元素的 width
-            "SDTTreeEleMargin": 16, //元素的边距
+            "SDTTreeEleMargin": 0, //元素的边距
             "SDTTreeLineColor": "#000", // 连线的颜色
             "SDTTreeCenterX": 0, // 树的中心点坐标 X
             "SDTTreeCenterY": 0, // 树的中心点坐标 Y
@@ -161,6 +161,9 @@ var SDT = (function() {
         };
         if (sCanvas.dataset.sdtElesetMargin) {
             SDTTreeCollocated.SDTTreeSet.SDTTreeEleMargin = Number(sCanvas.dataset.sdtElesetMargin);
+            SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight = SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight + SDTTreeCollocated.SDTTreeSet.SDTTreeEleMargin;
+        } else {
+            SDTTreeCollocated.SDTTreeSet.SDTTreeEleMargin = SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight;
             SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight = SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight + SDTTreeCollocated.SDTTreeSet.SDTTreeEleMargin;
         }
     }
@@ -508,7 +511,6 @@ var SDT = (function() {
                 SDTTreeCollocated.SDTTreeSet.SDTTreeEleMargin = Number(_component.SDTTreeSet.treeEleMargin);
                 SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight = document.querySelector(".sdt-drag-element svg").height.baseVal.value;
                 SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight = SDTTreeCollocated.SDTTreeSet.SDTTreeEleHeight + SDTTreeCollocated.SDTTreeSet.SDTTreeEleMargin;
-
             }
             _component.SDTTreeElements.forEach(function(element) {
                 var _comEle = element;

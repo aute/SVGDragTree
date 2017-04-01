@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SVG Drag Component Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="SDT.min.js" type="text/javascript" defer="defer" charset="utf-8"></script>
+    <script src="noSetScript.js" type="text/javascript" defer="defer" charset="utf-8"></script>
+    <link href="css/noSetStyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="display: none;">
+        <svg>
+            <symbol id="Icon1" viewBox="0 0 36 9">
+                <rect width="36" height="9" style="fill:rgb(0,0,255);" />
+            </symbol>
+            <symbol id="Icon2" viewBox="0 0 36 9">
+                <rect width="36" height="9" style="fill:rgb(255,0,255);" />
+            </symbol>
+            <symbol id="Icon3" viewBox="0 0 36 9">
+                <rect width="36" height="9" style="fill:rgb(0,0,0);" />
+            </symbol>
+        </svg>
+    </div>
+    <main>
+        <div class="left">
+            <h1 class="title">示例</h1>
+            <div class="sdt-drag-element-lis">
+                <div class="sdt-drag-element" data-sdt-type="test1">
+                    <svg width="72" height="36">
+                <use xlink:href="#Icon1" x="0" y="8"></use>
+                <text x="0" y="14" style="font-size: 18px; font-weight: 600;">test1</text>
+            </svg>
+                </div>
+                <div class="sdt-drag-element" data-sdt-type="test2">
+                    <svg width="72" height="36">
+                <use xlink:href="#Icon2" x="0" y="8"></use>
+                <text x="0" y="14" style="font-size: 18px; font-weight: 600;">test2</text>
+            </svg>
+                </div>
+                <div class="sdt-drag-element" data-sdt-type="test3">
+                    <svg width="72" height="36">
+                <use xlink:href="#Icon3" x="0" y="8"></use>
+                <text x="0" y="14" style="font-size: 18px; font-weight: 600;">test3</text>
+            </svg>
+                </div>
+            </div>
+        </div>
+        <div class="cent">
+            <div class="sdt-canvas" style="width: 720px; height: 720px; border:1px solid #ccc">
+                <svg id="sdtDropCanvas" width="100%" height="100%">
+				</svg>
+            </div>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <h4>本示例展示基本功能，更多功能请阅读文档</h4>
+                </li>
+                <li>
+                    <h4>按下鼠标拖动画布移动</h4>
+                </li>
+                <li>
+                    <h4>滚动滚轮 放大 \ 缩小</h4>
+                </li>
+                <li>
+                    <h4>点击 CENTER 移动至画布中心</h4>
+                </li>
+                <li>
+                    <h4>拖动 Page 至画布空白处，收到提示</h4>
+                </li>
+                <li>
+                    <h4>拖动 Page 至 File-2</h4>
+                </li>
+                <li>
+                    <h4>点击 BACKOUT 撤销放置</h4>
+                </li>
+                <li>
+                    <h4>连续放置与撤销</h4>
+                </li>
+                <li>
+                    <h4>点击 CHANGE LINE 切换连线方式</h4>
+                </li>
+            </ul>
+            <p class="ps"><em>*图标来自:<br> Iconfont - 坏人一枚</em></p>
+        </div>
+    </main>
+
+</body>
+
+</html>
