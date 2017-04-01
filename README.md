@@ -1,4 +1,4 @@
-<img src="e.gif">
+<img src="mov.gif">
 
 ## SDT 是什么？
 
