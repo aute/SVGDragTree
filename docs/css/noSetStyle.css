@@ -80,3 +80,8 @@ main {
 .left {
     margin-right: 12px;
 }
+
+.back {
+    width: 160px;
+    margin: 18px 0px 14px 40px;
+}

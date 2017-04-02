@@ -58,7 +58,12 @@ main {
 .ps {
     font-size: 12px;
     width: 160px;
-    margin: 180px 0px 14px 40px;
+    margin: 142px 0px 14px 40px;
+}
+
+.back {
+    width: 160px;
+    margin: 18px 0px 14px 40px;
 }
 
 .title {
